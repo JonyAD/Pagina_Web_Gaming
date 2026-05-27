@@ -1,0 +1,31 @@
+/* Hace que las tarjetas de juegos brillen al pasar el ratón */
+.tarjeta {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(82, 177, 243, 0.3);
+}
+
+/* Mejora visual de las imágenes de las tarjetas */
+.tarjeta img {
+    transition: transform 0.4s ease;
+}
+
+.tarjeta:hover img {
+    transform: scale(1.04);
+}
+
+/* Badge de género con color */
+.genero {
+    display: inline-block;
+    background-color: #0f3460;
+    color: #52b1f3;
+    border: 1px solid #52b1f3;
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 10px;
+}

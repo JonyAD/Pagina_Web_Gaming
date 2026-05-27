@@ -1,0 +1,24 @@
+.fecha {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.tarjeta .links {
+    display: inline-block;
+    margin-top: 15px;
+    color: #e94560;
+    font-size: 14px;
+    text-decoration: none;
+    border: 1px solid #e94560;
+    padding: 5px 10px;
+    border-radius: 7px;
+    transition: 0.4s;
+    /*Da el retardo en la iluminación al pasar raton*/
+}
+
+.tarjeta .links:hover {
+    background-color: #e94560;
+    color: white;
+}

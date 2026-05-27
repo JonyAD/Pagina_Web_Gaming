@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Gamer - Juegos</title>
+    <link rel="stylesheet" href="../css/css_externo.css">
+    <link rel="stylesheet" href="../css/css_Juegos.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="../img/Logo.png" alt="Logo Portal Gamer">
+        <div id="reloj-contenedor">
+            <span id="reloj">00:00:00</span>
+        </div>
+        <div>
+            <h1>Portal Gamer</h1>
+            <p>Tu web de videojuegos</p>
+        </div>
+    </header>
+
+    <nav>
+        <h2>Menú</h2>
+        <ul>
+            <li><a href="../Index.html">Inicio</a></li>
+            <li><a href="./Juegos.html" class="activo">Juegos</a></li>
+            <li><a href="./Rankings.html">Rankings</a></li>
+            <li><a href="./Noticias.html">Noticias</a></li>
+            <li><a href="./Galeria.html">Galería</a></li>
+            <li><a href="./Ejercicios.html">Otras Cosas</a></li>
+        </ul>
+        <div class="nav-feed">
+            <p class="nav-feed-titulo">Comunidad</p>
+            <div id="feed-nav"></div>
+        </div>
+    </nav>
+
+    <main>
+        <h2>Juegos destacados</h2>
+        <p class="subtitulo">Los juegos actuales más jugados por nuestros lectores.</p>
+
+        <div class="grid-juegos">
+            <div class="tarjeta">
+                <img src="../img/Icono_EldenRing.png" alt="Elden Ring">
+                <div class="info">
+                    <h4>Elden Ring</h4>
+                    <p>Aventura épica en mundo abierto con combates desafiantes y una historia profunda.</p>
+                    <div class="genero">RPG / Acción</div>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <img src="../img/Icono_BaldurGate.png" alt="Baldur's Gate 3">
+                <div class="info">
+                    <h4>Baldur's Gate 3</h4>
+                    <p>El mejor RPG por turnos del año. Decisiones, magia y aventuras con amigos. Si buscas una historia
+                        única este es tu juego.</p>
+                    <div class="genero">RPG</div>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <img src="../img/Icono_Zelda.png" alt="Zelda TotK">
+                <div class="info">
+                    <h4>Zelda: Tears of the Kingdom</h4>
+                    <p>Explora el mundo de Hyrule desde los cielos hasta las profundidades de la tierra en esta nueva
+                        entrega de su precuela Breath of the Wild.</p>
+                    <div class="genero">Aventura</div>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <img src="../img/Icono_CyberPunk.png" alt="Cyberpunk 2077">
+                <div class="info">
+                    <h4>Cyberpunk 2077</h4>
+                    <p>Futurismo y acción en Night City. Ahora sí funciona bien tras sus actualizaciones. Se lanzará en
+                        un futuro en Switch 2 bien optimizado.</p>
+                    <div class="genero">Acción / RPG</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <aside>
+        <h3>Mi perfil</h3>
+
+        <!-- FORMULARIO LOGIN (visible al inicio) -->
+        <div id="formulario-login">
+            <div class="perfil">
+                <div class="avatar-icono">
+                    <img id="avatar-img" src="../img/Icono_Persona.png" alt="Avatar">
+                </div>
+            </div>
+            <div class="login-form">
+                <label for="input-usuario">Usuario:</label>
+                <input type="text" id="input-usuario" placeholder="Tu usuario">
+                <label for="input-password">Contraseña:</label>
+                <input type="password" id="input-password" placeholder="Tu contraseña">
+                <button onclick="iniciarSesion()">Entrar</button>
+            </div>
+        </div>
+
+        <!-- PERFIL COMPLETO (oculto hasta login correcto) -->
+        <div id="perfil-completo" style="display:none;">
+            <div class="perfil">
+                <p class="nombre" id="nombre-bienvenida">Bienvenido</p>
+                <div class="avatar-icono">
+                    <img id="avatar-img-logueado" src="../img/Icono_Persona.png" alt="Avatar">
+                </div>
+                <p class="nivel">Nivel 30</p>
+            </div>
+            <div class="dato">
+                <p>Logros</p><span>56</span>
+            </div>
+            <div class="dato">
+                <p>Partidas Realizadas</p><span>1284</span>
+            </div>
+            <div class="dato">
+                <p>Horas</p><span>436h</span>
+            </div>
+            <div class="dato">
+                <p>Amigos</p><span>8</span>
+            </div>
+            <button onclick="cerrarSesion()" class="btn-logout">Cerrar sesión</button>
+        </div>
+        <div class="aside-slideshow">
+            <p class="aside-slideshow-titulo">🎮 Juego destacado</p>
+            <div id="aside-juego">
+                <img id="aside-img" src="../img/Icono_EldenRing_Redondo.png" alt="Juego destacado">
+                <p id="aside-nombre">Elden Ring</p>
+                <p id="aside-desc" class="aside-desc">RPG de mundo abierto y acción</p>
+            </div>
+        </div>
+    </aside>
+
+    <footer>
+        <p>© 2026 Portal de Noticias y Consejos - Ejercicio Página Web de Jonathan Afonso Darias -</p>
+        <p class="visitas-footer">Visitas a la web: <span id="contador-visitas">0</span></p>
+    </footer>
+
+    <script src="../js/reloj.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/comunidad.js"></script>
+    <script src="../js/extras.js"></script>
+
+    <button id="btn-top" onclick="volverArriba()" title="Volver arriba">↑</button>
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+.grafico {
+    background: #1c2642;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #0f3460;
+}
+
+.grafico h3 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e94560;
+    padding-bottom: 10px;
+    text-align: left;
+    color: white;
+}
+
+.barra-fila {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.barra-fila span {
+    color: #fff;
+    font-size: 14px;
+    width: 130px;
+    flex-shrink: 0;
+}
+
+.barra-contenedor {
+    flex-grow: 1;
+    background-color: rgba(76, 101, 245, 0.1);
+    height: 22px;
+    border: 1px solid rgb(32, 32, 32);
+    border-radius: 10px;
+    overflow: hidden;
+    /*Corta lo sobrante para mantenerlo dentro del contenedor*/
+}
+
+.barra {
+    height: 100%;
+    /*Tamaño completo del contenedor*/
+    background: linear-gradient(90deg, #3f6da5, #00d4ff);
+    /*Degradado de izq a der*/
+    border-radius: 10px;
+}
+
+.barra-fila p {
+    color: #00d4ff;
+    font-weight: bold;
+    width: 45px;
+    text-align: right;
+}
+
+.formularios {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.formularios label {
+    display: block;
+    color: #b1abab;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.formularios select,
+.formularios textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    background-color: #0f3460;
+    color: white;
+    border: 1px solid #3f6da5;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.formularios textarea {
+    height: 80px;
+}
+
+/*Aplicamos estilo al enfocar algunos de los formularios*/
+.formularios select:focus,
+.formularios textarea:focus {
+    outline: 2px solid #e94560;
+    /*En vez del color defecto, pondremos el rosa usado*/
+    border-color: transparent;
+    /*Evita que el borde original moleste*/
+}
+
+.formularios button {
+    background-color: #e94560;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+    margin-top: 5px;
+    text-transform: uppercase;
+    /*Pone texto en mayúscula*/
+}
+
+.formularios button:hover {
+    background-color: #ff5e7a;
+    /*Tono mas claro al pasar ratón*/
+}
+
+.info form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+/*Podio Top 3*/
+.podio-titulo {
+    text-align: center;
+    color: #e94560;
+    font-size: 18px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.podio-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 12px;
+    margin: 25px 0;
+    padding: 25px 15px 15px;
+    background: #1c2642;
+    border-radius: 12px;
+    border: 1px solid #0f3460;
+}
+
+.podio-lugar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 18px 15px;
+    border-radius: 10px;
+    min-width: 110px;
+    text-align: center;
+}
+
+.podio-lugar img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.oro {
+    background: rgba(255, 215, 0, 0.08);
+    border: 2px solid gold;
+    padding-bottom: 30px;
+}
+
+.plata {
+    background: rgba(192, 192, 192, 0.08);
+    border: 2px solid silver;
+}
+
+.bronce {
+    background: rgba(205, 127, 50, 0.08);
+    border: 2px solid #cd7f32;
+}
+
+.podio-medalla {
+    font-size: 26px;
+}
+
+.podio-nombre {
+    color: white;
+    font-weight: bold;
+    font-size: 11px;
+    margin: 0;
+}
+
+.podio-pct {
+    color: #52b1f3;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+/*Layout del voto con trailer al lado*/
+.voto-layout {
+    display: flex !important;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 18px;
+    flex-wrap: wrap;
+}
+
+.voto-form {
+    flex: 0 0 210px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.voto-trailer {
+    flex: 1 1 280px;
+    max-width: 360px;
+    min-width: 0;
+}
+
+.voto-trailer p {
+    color: #52b1f3;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.voto-trailer iframe {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #0f3460;
+    display: block;
+}

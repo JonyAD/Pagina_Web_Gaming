@@ -1,0 +1,38 @@
+<!-- Jonathan Afonso Darias, 1DAM -->
+
+<!-- Visualiza la tabla de multiplicar de un número introducido en un input.
+  Usa innerHTML para mostrar el resultado con saltos de línea..--->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 7 - Tabla de multiplicar</title>
+</head>
+<body>
+    <h2>Ejercicio 7 - Tabla de multiplicar</h2>
+    <label for="numero">Introduce un número:</label>
+    <input type="number" id="numero" placeholder="Ej: 5">
+    <button id="botonTabla">Mostrar tabla</button>
+    <br><br>
+    <label id="lblresultado"></label>
+
+    <script>
+        document.getElementById("botonTabla").addEventListener("click", function () {
+            let numero = parseInt(document.getElementById("numero").value);
+
+            if (isNaN(numero)) {
+                document.getElementById("lblresultado").innerHTML = "Introduce un número válido.";
+                return;
+            }
+
+            let resultado = "<b>Tabla del " + numero + ":</b><br>";
+            for (let i = 1; i <= 10; i++) {
+                resultado += numero + " x " + i + " = " + (numero * i) + "<br>";
+            }
+
+            document.getElementById("lblresultado").innerHTML = resultado;
+        });
+    </script>
+</body>
+</html>

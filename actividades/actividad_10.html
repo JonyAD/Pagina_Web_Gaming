@@ -1,0 +1,66 @@
+<!-- Jonathan Afonso Darias, 1DAM -->
+
+<!-- Introduce un número en un cuadro de texto y comprueba si 
+ es igual al número aleatorio generado. 
+ Si no acierta, indica si es mayor o menor. 
+ Máximo 5 intentos. Muestra los intentos realizados.--->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 10 - Adivina el número</title>
+</head>
+<body>
+    <h2>Ejercicio 10 - Adivina el número (del 1 al 10)</h2>
+    <p>Tienes 5 intentos para adivinar el número.</p>
+    <label for="intento">Tu número:</label>
+    <input type="number" id="intento" placeholder="Entre 1 y 10">
+    <button id="botonAdivinar">Comprobar</button>
+    <button id="botonNuevoJuego">Nuevo juego</button>
+    <div id="mensajeAdivinar"></div>
+    <div id="intentosRestantes"></div>
+
+    <script>
+        let numeroSecreto = Math.floor(Math.random() * 10) + 1;
+        let intentos = 0;
+        let maxIntentos = 5;
+
+        document.getElementById("intentosRestantes").textContent = "Intentos usados: 0 / " + maxIntentos;
+
+        document.getElementById("botonAdivinar").addEventListener("click", function () {
+            let numero = parseInt(document.getElementById("intento").value);
+            let mensaje = document.getElementById("mensajeAdivinar");
+
+            if (isNaN(numero)) {
+                mensaje.textContent = "Introduce un número válido.";
+                return;
+            }
+
+            intentos++;
+            document.getElementById("intentosRestantes").textContent = "Intentos usados: " + intentos + " / " + maxIntentos;
+
+            if (numero === numeroSecreto) {
+                mensaje.textContent = "¡Correcto! Adivinaste el número " + numeroSecreto + " en " + intentos + " intento(s).";
+                document.getElementById("botonAdivinar").disabled = true;
+            } else if (intentos >= maxIntentos) {
+                mensaje.textContent = "¡Se acabaron los intentos! El número era " + numeroSecreto + ".";
+                document.getElementById("botonAdivinar").disabled = true;
+            } else if (numero < numeroSecreto) {
+                mensaje.textContent = "El número secreto es MAYOR. Te quedan " + (maxIntentos - intentos) + " intento(s).";
+            } else {
+                mensaje.textContent = "El número secreto es MENOR. Te quedan " + (maxIntentos - intentos) + " intento(s).";
+            }
+        });
+
+        document.getElementById("botonNuevoJuego").addEventListener("click", function () {
+            numeroSecreto = Math.floor(Math.random() * 10) + 1;
+            intentos = 0;
+            document.getElementById("intentosRestantes").textContent = "Intentos usados: 0 / " + maxIntentos;
+            document.getElementById("mensajeAdivinar").textContent = "";
+            document.getElementById("intento").value = "";
+            document.getElementById("botonAdivinar").disabled = false;
+        });
+    </script>
+</body>
+</html>

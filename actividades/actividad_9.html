@@ -1,0 +1,24 @@
+<!-- Jonathan Afonso Darias, 1DAM -->
+
+<!-- Crea un número aleatorio entre 1 y 10 y visualízalo. 
+ Usa Math.random() multiplicado por 10 y suma 1.--->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 9 - Número aleatorio</title>
+</head>
+<body>
+    <h2>Ejercicio 9 - Número aleatorio entre 1 y 10</h2>
+    <button id="botonAleatorio">Generar número</button>
+    <p id="resultadoAleatorio"></p>
+
+    <script>
+        document.getElementById("botonAleatorio").addEventListener("click", function () {
+            let numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+            document.getElementById("resultadoAleatorio").textContent = "Número generado: " + numeroAleatorio;
+        });
+    </script>
+</body>
+</html>

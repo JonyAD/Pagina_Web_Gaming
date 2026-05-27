@@ -1,0 +1,69 @@
+<!-- Jonathan Afonso Darias, 1DAM -->
+
+<!-- Crea un array con comidas favoritas, 
+ recórrelo, añade con push, 
+ elimina por posición con splice, 
+ elimina por contenido con indexOf + splice. 
+ Crea un objeto estudiante y muestra sus datos..--->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 11 - Arrays y objetos</title>
+</head>
+<body>
+    <h2>Ejercicio 11 - Arrays y Objetos</h2>
+    <button id="botonEjecutar">Ejecutar ejercicio (ver consola)</button>
+    <div id="resultado"></div>
+
+    <script>
+        document.getElementById("botonEjecutar").addEventListener("click", function () {
+            let salida = "";
+
+            // Array con comidas favoritas
+            let comidas = ["Pizza", "Pasta", "Sushi", "Tacos"];
+
+            // Recorrer y mostrar cada elemento
+            salida += "<b>Comidas favoritas:</b><br>";
+            for (let i = 0; i < comidas.length; i++) {
+                salida += comidas[i] + "<br>";
+                console.log(comidas[i]);
+            }
+
+            // Añadir elemento con push
+            comidas.push("Hamburguesa");
+            salida += "<br><b>Después de push (añadir Hamburguesa):</b><br>" + comidas.join(", ") + "<br>";
+            console.log("Después de push:", comidas);
+
+            // Eliminar por posición (posición 1 = Pasta)
+            comidas.splice(1, 1);
+            salida += "<br><b>Después de splice(1,1) (eliminar posición 1):</b><br>" + comidas.join(", ") + "<br>";
+            console.log("Después de splice por posición:", comidas);
+
+            // Eliminar por contenido (buscar Sushi y eliminarlo)
+            let pos = comidas.indexOf("Sushi");
+            if (pos !== -1) {
+                comidas.splice(pos, 1);
+            }
+            salida += "<br><b>Después de indexOf + splice (eliminar Sushi):</b><br>" + comidas.join(", ") + "<br>";
+            console.log("Después de eliminar por contenido:", comidas);
+
+            // Objeto estudiante
+            let estudiante = {
+                nombre: "Jonathan",
+                edad: 30,
+                curso: "1DAM"
+            };
+            salida += "<br><b>Objeto estudiante:</b><br>";
+            salida += "Nombre: " + estudiante.nombre + "<br>";
+            salida += "Edad: " + estudiante.edad + "<br>";
+            salida += "Curso: " + estudiante.curso + "<br>";
+            console.log("Estudiante:", estudiante);
+            console.log("Nombre:", estudiante.nombre);
+
+            document.getElementById("resultado").innerHTML = salida;
+        });
+    </script>
+</body>
+</html>

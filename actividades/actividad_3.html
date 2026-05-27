@@ -1,0 +1,35 @@
+<!-- Jonathan Afonso Darias, 1DAM -->
+
+<!-- El usuario introduce un color en un cuadro de texto y 
+ al presionar un botón el fondo de pantalla cambia al color indicado.--->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3 - Color de fondo</title>
+</head>
+<body>
+    <h2>Ejercicio 3 - Cambia el color de fondo</h2>
+    <p>Escribe un color para cambiar el fondo:</p>
+    <label for="inputColor">Color:</label>
+    <input type="text" id="inputColor" placeholder="Ej: red, blue, #ff0000...">
+    <button id="botonColor">Cambiar fondo</button>
+    <div id="resultadoColor"></div>
+
+    <script>
+        let botonColor = document.getElementById("botonColor");
+
+        botonColor.addEventListener("click", function () {
+            let colorEscrito = document.getElementById("inputColor").value;
+
+            if (colorEscrito === "") {
+                document.getElementById("resultadoColor").textContent = "Escribe un color antes de pulsar el botón.";
+            } else {
+                document.body.style.backgroundColor = colorEscrito;
+                document.getElementById("resultadoColor").textContent = "Fondo cambiado al color: " + colorEscrito;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!-- Jonathan Afonso Darias, 1DAM -->
+
+<!--Página web donde las imágenes van pasando automáticamente cada segundo 
+sin pulsar ningún botón. Usa setTimeout.--->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 14 - Pase automático de imágenes</title>
+</head>
+<body>
+    <h2>Ejercicio 14 - Pase automático de imágenes</h2>
+
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/015/275/318/small/beautiful-beach-tropical-beach-background-as-summer-landscape-white-sand-and-calm-sea-for-beach-banner-perfect-beach-scene-vacation-and-summer-holiday-concept-boost-up-color-process-photo.jpg" name="mar" width="300px">
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/014/028/718/small/majestic-closeup-view-of-calm-sea-water-waves-with-orange-sunrise-sunset-sunlight-tropical-island-beach-landscape-exotic-shore-coast-summer-vacation-holiday-amazing-nature-scenic-relax-paradise-photo.jpg" name="mar" width="300px" style="display:none">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fm=jpg&q=60&w=3000&auto=format&fit=crop" name="mar" width="300px" style="display:none">
+
+    <script>
+        let indiceActual = 0;
+
+        function pasarImagenes() {
+            let imagenes = document.getElementsByName("mar");
+
+            // Ocultar todas
+            for (let i = 0; i < imagenes.length; i++) {
+                imagenes[i].style.display = "none";
+            }
+
+            // Avanzar índice
+            indiceActual = (indiceActual + 1) % imagenes.length;
+
+            // Mostrar la siguiente
+            imagenes[indiceActual].style.display = "";
+
+            // Llamar de nuevo después de 1 segundo
+            setTimeout(pasarImagenes, 1000);
+        }
+
+        // Iniciar el pase automático
+        setTimeout(pasarImagenes, 1000);
+    </script>
+</body>
+</html>

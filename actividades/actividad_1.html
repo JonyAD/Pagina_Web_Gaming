@@ -1,0 +1,36 @@
+<!-- Jonathan Afonso Darias, 1DAM -->
+
+<!-- Crea una función que reciba tu nombre y salude, 
+ para ello crea un campo de texto y un botón. 
+ Al hacer clic en el botón, 
+ muestra un saludo con el texto ingresado.--->
+ 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1 - Saludo</title>
+</head>
+<body>
+    <h2>Ejercicio 1 - Saludo con nombre</h2>
+    <label for="Nombre">Introduce tu nombre:</label>
+    <input type="text" id="Nombre" placeholder="Tu nombre...">
+    <button id="botonSaludo">Saludar</button>
+    <div id="resultadoSaludo"></div>
+
+    <script>
+        let botonSaludo = document.getElementById("botonSaludo");
+
+        botonSaludo.addEventListener("click", function () {
+            let nombreUsuario = document.getElementById("Nombre").value;
+
+            if (nombreUsuario === "") {
+                document.getElementById("resultadoSaludo").textContent = "Por favor, introduce tu nombre.";
+            } else {
+                document.getElementById("resultadoSaludo").textContent = "Hola, " + nombreUsuario + "! Bienvenido a JavaScript";
+                alert("Hiciste clic en el botón! Hola " + nombreUsuario);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!-- Jonathan Afonso Darias, 1DAM -->
+
+<!-- Visualiza dos botones (incrementar y decrementar) 
+ y una etiqueta cuyo valor comience en 0. 
+ Los números positivos se muestran en verde y los negativos en rojo. 
+ Añade un botón de reset. Guarda el valor en localStorage 
+ para que persista al recargar la página..--->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 5 - Contador</title>
+</head>
+<body>
+    <h2>Ejercicio 5 - Contador</h2>
+    <p>Usa los botones para sumar o restar al contador. Los números positivos se muestran en verde y los negativos en rojo.</p>
+    <div>
+        <button id="botonDecrementar">Decrementar</button>
+        <span id="valorContador">0</span>
+        <button id="botonIncrementar">Incrementar</button>
+        <button id="botonReset">Reset</button>
+    </div>
+
+    <script>
+        let contador = 0;
+
+        function actualizarContador() {
+            let etiqueta = document.getElementById("valorContador");
+            etiqueta.textContent = contador;
+
+            if (contador > 0) {
+                etiqueta.style.color = "green";
+            } else if (contador < 0) {
+                etiqueta.style.color = "red";
+            } else {
+                etiqueta.style.color = "black";
+            }
+
+            localStorage.setItem("Valorcontador", contador);
+        }
+
+        // Cargar el valor guardado al iniciar la página
+        let valorGuardado = localStorage.getItem("Valorcontador");
+        if (valorGuardado !== null) {
+            contador = parseInt(valorGuardado);
+        }
+
+        actualizarContador();
+
+        document.getElementById("botonIncrementar").addEventListener("click", function () {
+            contador = contador + 1;
+            actualizarContador();
+        });
+
+        document.getElementById("botonDecrementar").addEventListener("click", function () {
+            contador = contador - 1;
+            actualizarContador();
+        });
+
+        document.getElementById("botonReset").addEventListener("click", function () {
+            contador = 0;
+            actualizarContador();
+        });
+    </script>
+</body>
+</html>

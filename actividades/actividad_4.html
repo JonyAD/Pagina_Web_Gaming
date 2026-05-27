@@ -1,0 +1,76 @@
+<!-- Jonathan Afonso Darias, 1DAM -->
+
+<!-- Crea una función que calcule el perímetro de un rectángulo. 
+ Obtén la base y la altura de dos campos input y un botón que muestre 
+ base, altura y perímetro. 
+ Añade otro botón para la suma y otro para la multiplicación.--->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4 - Rectángulo</title>
+</head>
+<body>
+    <h2>Ejercicio 4 - Perímetro del rectángulo</h2>
+    <p>Introduce base y altura de tu rectángulo.</p>
+    <label for="base">Base:</label>
+    <input type="number" id="base">
+    <label for="altura">Altura:</label>
+    <input type="number" id="altura">
+    <br><br>
+    <button id="botonPerimetro">Calcular Perímetro</button>
+    <button id="botonSuma">Suma</button>
+    <button id="botonMultiplicacion">Multiplicación</button>
+    <div id="resultadoRectangulo"></div>
+
+    <script>
+        function calcularPerimetro() {
+            let base = parseFloat(document.getElementById("base").value);
+            let altura = parseFloat(document.getElementById("altura").value);
+
+            if (document.getElementById("base").value === "" || document.getElementById("altura").value === "") {
+                document.getElementById("resultadoRectangulo").textContent = "Introduce valores en base y altura.";
+                return;
+            }
+
+            let perimetro = 2 * (base + altura);
+            document.getElementById("resultadoRectangulo").textContent =
+                "Base: " + base + " | Altura: " + altura + " | Perímetro: " + perimetro;
+        }
+
+        function calcularSuma() {
+            let base = parseFloat(document.getElementById("base").value);
+            let altura = parseFloat(document.getElementById("altura").value);
+
+            if (document.getElementById("base").value === "" || document.getElementById("altura").value === "") {
+                document.getElementById("resultadoRectangulo").textContent = "Introduce valores en base y altura.";
+                return;
+            }
+
+            let suma = base + altura;
+            document.getElementById("resultadoRectangulo").textContent =
+                "Base: " + base + " | Altura: " + altura + " | Suma: " + suma;
+        }
+
+        function calcularMultiplicacion() {
+            let base = parseFloat(document.getElementById("base").value);
+            let altura = parseFloat(document.getElementById("altura").value);
+
+            if (document.getElementById("base").value === "" || document.getElementById("altura").value === "") {
+                document.getElementById("resultadoRectangulo").textContent = "Introduce valores en base y altura.";
+                return;
+            }
+
+            let multiplicacion = base * altura;
+            document.getElementById("resultadoRectangulo").textContent =
+                "Base: " + base + " | Altura: " + altura + " | Multiplicación: " + multiplicacion;
+        }
+
+        document.getElementById("botonPerimetro").addEventListener("click", calcularPerimetro);
+        document.getElementById("botonSuma").addEventListener("click", calcularSuma);
+        document.getElementById("botonMultiplicacion").addEventListener("click", calcularMultiplicacion);
+    </script>
+</body>
+</html>

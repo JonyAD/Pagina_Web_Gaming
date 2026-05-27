@@ -1,0 +1,77 @@
+<!-- Jonathan Afonso Darias, 1DAM -->
+
+<!-- Crea un programa que evalúe si una persona puede entrar 
+ a un parque de atracciones según su edad, la del acompañante, 
+ si tiene pase rápido y si tiene autorización especial..--->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 6 - Parque de Atracciones</title>
+    <style>
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form .casillas {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .form .casillas #BotonEnviar {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form class="form">
+        <fieldset>
+            <legend>Registro de Entrada</legend>
+            <div class="casillas">
+                <h2>¡Bienvenido al Parque de Atracciones!</h2>
+                <p>Introduzca su edad y la de su acompañante</p>
+                <label for="Nombre">Edad tuya:</label>
+                <input type="number" id="Nombre" placeholder="Tu edad...." required><br>
+                <label for="Acompanante">Edad del acompañante:</label>
+                <input type="number" id="Acompanante" placeholder="Edad del acompañante..."><br>
+                <label>Pase Rápido <input type="checkbox" id="PaseRapido"></label>
+                <label>Autorización Especial <input type="checkbox" id="AutorizacionEspecial"></label>
+                <button id="BotonEnviar">Comprobar</button>
+            </div>
+        </fieldset>
+    </form>
+
+    <script>
+        let botonComprobar = document.getElementById("BotonEnviar");
+        botonComprobar.addEventListener("click", function () {
+            let edad1 = document.getElementById("Nombre").value;
+            let edad2 = document.getElementById("Acompanante").value;
+            let checkboxAutorizacion = document.getElementById("AutorizacionEspecial");
+            let checkboxPase = document.getElementById("PaseRapido");
+
+            if (checkboxPase.checked) {
+                alert("Puedes pasar, ya has pagado");
+            } else if (edad1 < 5) {
+                alert("Edad insuficiente para entrar");
+            } else if (edad1 >= 5 && edad1 < 12) {
+                if (edad2 > 18) {
+                    alert("Puedes pasar con tu acompañante");
+                } else {
+                    alert("Falta acompañante mayor de 18 años");
+                }
+            } else if (edad1 >= 12 && edad1 < 60) {
+                alert("Por el momento, puedes entrar");
+            } else {
+                if (checkboxAutorizacion.checked) {
+                    alert("Puedes pasar con la autorización especial");
+                } else {
+                    alert("No dispones de autorización, fuera");
+                }
+            }
+        });
+    </script>
+</body>
+</html>

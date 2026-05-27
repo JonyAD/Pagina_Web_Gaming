@@ -1,0 +1,41 @@
+<!-- Jonathan Afonso Darias, 1DAM -->
+
+<!-- Página web con varias imágenes y botones para mostrarlas u ocultarlas. 
+ Prueba la diferencia entre visibility y display.--->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 12 - Mostrar/Ocultar imágenes</title>
+</head>
+<body>
+    <h2>Ejercicio 12 - Mostrar y ocultar imágenes</h2>
+
+    <img src="https://jardinarium.com/blog/wp-content/uploads/2023/10/ciclamen2-1.jpg" name="flores" width="200px">
+    <img src="https://media.admagazine.com/photos/644b88b2154ed7b822040126/master/pass/plantas-con-flores.jpg" name="flores" width="200px">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHsOWjCQkMihFQUFbzUlp4_Zm1c--Uwg9Gwg&s" name="flores" width="200px">
+
+    <br><br>
+    <input type="button" value="Ver" onclick="mostrar()">
+    <input type="button" value="Ocultar" onclick="ocultar()">
+
+    <script>
+        function mostrar() {
+            let imagenes = document.getElementsByName('flores');
+            for (let i = 0; i < imagenes.length; i++) {
+                imagenes[i].style.display = '';       // Muestra la imagen (ocupa espacio)
+                // imagenes[i].style.visibility = 'visible'; // Alternativa: ocupa espacio aunque esté oculta
+            }
+        }
+
+        function ocultar() {
+            let imagenes = document.getElementsByName('flores');
+            for (let i = 0; i < imagenes.length; i++) {
+                imagenes[i].style.display = 'none';   // Oculta y no ocupa espacio
+                // imagenes[i].style.visibility = 'hidden'; // Alternativa: oculta pero sigue ocupando espacio
+            }
+        }
+    </script>
+</body>
+</html>

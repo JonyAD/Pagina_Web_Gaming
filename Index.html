@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Gamer - Inicio</title>
+    <link rel="stylesheet" href="./css/css_externo.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="./img/Logo.png" alt="Logo Portal Gamer">
+        <div id="reloj-contenedor">
+            <span id="reloj">00:00:00</span>
+        </div>
+        <div>
+            <h1>Portal Gamer</h1>
+            <p>Tu web de videojuegos</p>
+        </div>
+    </header>
+
+    <nav>
+        <h2>Menú</h2>
+        <ul>
+            <li><a href="./Index.html" class="activo">Inicio</a></li>
+            <li><a href="./htmls/Juegos.html">Juegos</a></li>
+            <li><a href="./htmls/Rankings.html">Rankings</a></li>
+            <li><a href="./htmls/Noticias.html">Noticias</a></li>
+            <li><a href="./htmls/Galeria.html">Galería</a></li>
+            <li><a href="./htmls/Ejercicios.html">Otras Cosas</a></li>
+        </ul>
+        <div class="nav-feed">
+            <p class="nav-feed-titulo">Comunidad</p>
+            <div id="feed-nav"></div>
+        </div>
+    </nav>
+
+    <main>
+        <h2>Bienvenido a Portal Gamer</h2>
+        <p class="subtitulo">Un sitio donde los gamers encuentran lo que buscan de sus juegos favoritos.</p>
+
+        <div class="grid-inicio">
+
+            <!-- TARJETA HERO: grande izquierda -->
+            <div class="tarjeta tarjeta-hero">
+                <img src="./img/Logo.png" alt="Portal Gamer">
+                <div class="info">
+                    <h4>¿Qué es Portal Gamer?</h4>
+                    <p>Una web dedicada a los videojuegos. Aquí encontrarás los juegos más populares del momento,
+                        rankings de la comunidad y las últimas noticias del mundo gaming. Navega por las secciones
+                        del menú para descubrir todo lo que tenemos preparado para ti.</p>
+                    <br>
+                    <p>Accede con tu perfil para registrar tus partidas, votar tus favoritos y formar parte de
+                        nuestra comunidad de jugadores.</p>
+                </div>
+            </div>
+
+            <!-- TARJETA PEQUEÑA: Juegos -->
+            <div class="tarjeta tarjeta-sm tarjeta-clic" onclick="window.location.href='./htmls/Juegos.html'">
+                <img src="./img/Icono_Juegos.png" alt="Juegos destacados">
+                <div class="info">
+                    <h4>Juegos destacados</h4>
+                    <p>Desde RPGs épicos hasta aventuras en mundo abierto. Actualizamos periódicamente.</p>
+                </div>
+            </div>
+
+            <!-- TARJETA PEQUEÑA: Rankings -->
+            <div class="tarjeta tarjeta-sm tarjeta-clic" onclick="window.location.href='./htmls/Rankings.html'">
+                <img src="./img/Icono_Trofeos.png" alt="Rankings">
+                <div class="info">
+                    <h4>Rankings</h4>
+                    <p>¿Qué juego está triunfando esta semana? Vota y deja tu opinión.</p>
+                </div>
+            </div>
+
+            <!-- TARJETA WIDE: Noticias -->
+            <div class="tarjeta tarjeta-wide tarjeta-clic" onclick="window.location.href='./htmls/Noticias.html'">
+                <img src="./img/Icono_Locutor.png" alt="Noticias">
+                <div class="info">
+                    <h4>Noticias</h4>
+                    <p>Mantente al día con los últimos lanzamientos, actualizaciones y eventos del mundo de los
+                        videojuegos a través de nuestros colaboradores.</p>
+                </div>
+            </div>
+
+            <!-- TARJETA GALERÍA: fila completa abajo -->
+            <div class="tarjeta tarjeta-galeria tarjeta-clic" onclick="window.location.href='./htmls/Galeria.html'">
+                <img src="./img/Icono_Galeria.png" alt="Galería">
+                <div class="info">
+                    <h4>Galería</h4>
+                    <p>Explora nuestra colección de imágenes de los mejores juegos. Navega entre capturas de
+                        pantalla y arte oficial de Elden Ring, Baldur's Gate 3, Zelda y Cyberpunk 2077.</p>
+                </div>
+            </div>
+            <!-- TARJETA OTRAS COSAS -->
+            <div class="tarjeta tarjeta-galeria tarjeta-clic" onclick="window.location.href='./htmls/Ejercicios.html'">
+                <img src="./img/Icono_PJ.png" alt="Ejercicios JS" class="img-pj">
+                <div class="info">
+                    <h4>Ejercicios JavaScript</h4>
+                    <p>Colección de 15 ejercicios de JavaScript realizados (y bien espero). Accede a cada actividad
+                        directamente por aquí.</p>
+                </div>
+            </div>
+        </div>
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-numero" id="stat-juegos">0</span>
+                <span class="stat-label">Juegos analizados</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-numero" id="stat-partidas">0</span>
+                <span class="stat-label">Partidas registradas</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-numero" id="stat-horas">0</span>
+                <span class="stat-label">Horas de contenido</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-numero" id="stat-usuarios">0</span>
+                <span class="stat-label">Usuarios activos</span>
+            </div>
+        </div>
+    </main>
+
+    <aside>
+        <h3>Mi perfil</h3>
+
+        <!-- FORMULARIO LOGIN (visible al inicio) -->
+        <div id="formulario-login">
+            <div class="perfil">
+                <div class="avatar-icono">
+                    <img id="avatar-img" src="./img/Icono_Persona.png" alt="Avatar">
+                </div>
+            </div>
+            <div class="login-form">
+                <label for="input-usuario">Usuario:</label>
+                <input type="text" id="input-usuario" placeholder="Tu usuario">
+                <label for="input-password">Contraseña:</label>
+                <input type="password" id="input-password" placeholder="Tu contraseña">
+                <button onclick="iniciarSesion()">Entrar</button>
+            </div>
+        </div>
+
+        <!-- PERFIL COMPLETO (oculto hasta login correcto) -->
+        <div id="perfil-completo" style="display:none;">
+            <div class="perfil">
+                <p class="nombre" id="nombre-bienvenida">Bienvenido</p>
+                <div class="avatar-icono">
+                    <img id="avatar-img-logueado" src="./img/Icono_Persona.png" alt="Avatar">
+                </div>
+                <p class="nivel">Nivel 30</p>
+            </div>
+            <div class="dato">
+                <p>Logros</p><span>56</span>
+            </div>
+            <div class="dato">
+                <p>Partidas Realizadas</p><span>1284</span>
+            </div>
+            <div class="dato">
+                <p>Horas</p><span>436h</span>
+            </div>
+            <div class="dato">
+                <p>Amigos</p><span>8</span>
+            </div>
+            <button onclick="cerrarSesion()" class="btn-logout">Cerrar sesión</button>
+        </div>
+
+        <div class="aside-slideshow">
+            <p class="aside-slideshow-titulo">🎮 Juego destacado</p>
+            <div id="aside-juego">
+                <img id="aside-img" src="./img/Icono_EldenRing_Redondo.png" alt="Juego destacado">
+                <p id="aside-nombre">Elden Ring</p>
+                <p id="aside-desc" class="aside-desc">RPG de mundo abierto y acción</p>
+            </div>
+        </div>
+    </aside>
+
+    <footer>
+        <p>© 2026 Portal de Noticias y Consejos - Ejercicio Página Web de Jonathan Afonso Darias -</p>
+        <p class="visitas-footer">Visitas a la web: <span id="contador-visitas">0</span></p>
+    </footer>
+    <script src="./js/reloj.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/comunidad.js"></script>
+    <script src="./js/contador.js"></script>
+    <script src="./js/extras.js"></script>
+    <button id="btn-top" onclick="volverArriba()" title="Volver arriba">↑</button>
+</body>
+
+</html>

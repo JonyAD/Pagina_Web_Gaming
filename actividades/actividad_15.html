@@ -1,0 +1,59 @@
+<!-- Jonathan Afonso Darias, 1DAM -->
+
+<!--Crea una página que visualice la hora actual en cada instante 
+usando el objeto Date() y setTimeout.--->
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 15 - Reloj</title>
+    <style>
+        body {
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh;
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .reloj {
+            background: black;
+            padding: 20px 30px;
+            border-radius: 15px;
+        }
+        #hora {
+            font-size: 4rem;
+            color: white;
+            letter-spacing: 4px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="reloj">
+        <div id="hora"></div>
+    </div>
+
+    <script>
+        function mostrarHora() {
+            let ahora = new Date();
+            let horas = ahora.getHours();
+            let minutos = ahora.getMinutes();
+            let segundos = ahora.getSeconds();
+
+            if (horas < 10) horas = '0' + horas;
+            if (minutos < 10) minutos = '0' + minutos;
+            if (segundos < 10) segundos = '0' + segundos;
+
+            document.getElementById('hora').textContent = horas + ':' + minutos + ':' + segundos;
+
+            setTimeout(mostrarHora, 1000);
+        }
+
+        mostrarHora();
+    </script>
+</body>
+</html>

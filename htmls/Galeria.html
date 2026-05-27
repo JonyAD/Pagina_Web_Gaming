@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Gamer - Galería</title>
+    <link rel="stylesheet" href="../css/css_externo.css">
+    <link rel="stylesheet" href="../css/css_Galeria.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="../img/Logo.png" alt="Logo Portal Gamer">
+        <div id="reloj-contenedor">
+            <span id="reloj">00:00:00</span>
+        </div>
+        <div>
+            <h1>Portal Gamer</h1>
+            <p>Tu web de videojuegos</p>
+        </div>
+    </header>
+
+    <nav>
+        <h2>Menú</h2>
+        <ul>
+            <li><a href="../Index.html">Inicio</a></li>
+            <li><a href="./Juegos.html">Juegos</a></li>
+            <li><a href="./Rankings.html">Rankings</a></li>
+            <li><a href="./Noticias.html">Noticias</a></li>
+            <li><a href="./Galeria.html" class="activo">Galería</a></li>
+            <li><a href="./Ejercicios.html">Otras Cosas</a></li>
+        </ul>
+        <div class="nav-feed">
+            <p class="nav-feed-titulo">Comunidad</p>
+            <div id="feed-nav"></div>
+        </div>
+    </nav>
+
+    <main>
+        <h2>Galería de Juegos</h2>
+        <p class="subtitulo">Selecciona un juego para ver sus imágenes.</p>
+
+        <!-- Botones de selección de juego -->
+        <div class="galeria-controles">
+            <button id="btn-eldenring" class="btn-juego" onclick="seleccionarJuego('eldenring')">Elden Ring</button>
+            <button id="btn-bg3" class="btn-juego" onclick="seleccionarJuego('bg3')">Baldur's Gate 3</button>
+            <button id="btn-zelda" class="btn-juego" onclick="seleccionarJuego('zelda')">Zelda: TotK</button>
+            <button id="btn-cyberpunk" class="btn-juego" onclick="seleccionarJuego('cyberpunk')">Cyberpunk
+                2077</button>
+        </div>
+
+        <!-- Visor de imagen -->
+        <div class="galeria-visor">
+            <img id="galeria-img" src="" alt="Imagen del juego">
+            <h4 id="galeria-titulo">Cargando...</h4>
+            <p id="galeria-descripcion"></p>
+            <p class="contador" id="contador">1 / 3</p>
+        </div>
+
+        <!-- Botones de navegación -->
+        <div class="galeria-navegacion">
+            <button onclick="anteriorImagen()">◀ Anterior</button>
+            <button onclick="siguienteImagen()">Siguiente ▶</button>
+            <button id="btn-auto" onclick="toggleAuto()">▶ Pasar Automático</button>
+        </div>
+    </main>
+
+    <aside>
+        <h3>Mi perfil</h3>
+
+        <div id="formulario-login">
+            <div class="perfil">
+                <div class="avatar-icono">
+                    <img id="avatar-img" src="../img/Icono_Persona.png" alt="Avatar">
+                </div>
+            </div>
+            <div class="login-form">
+                <label for="input-usuario">Usuario:</label>
+                <input type="text" id="input-usuario" placeholder="Tu usuario">
+                <label for="input-password">Contraseña:</label>
+                <input type="password" id="input-password" placeholder="Tu contraseña">
+                <button onclick="iniciarSesion()">Entrar</button>
+            </div>
+        </div>
+
+        <div id="perfil-completo" style="display:none;">
+            <div class="perfil">
+                <p class="nombre" id="nombre-bienvenida">Bienvenido</p>
+                <div class="avatar-icono">
+                    <img id="avatar-img-logueado" src="../img/Icono_Persona.png" alt="Avatar">
+                </div>
+                <p class="nivel">Nivel 30</p>
+            </div>
+            <div class="dato">
+                <p>Logros</p><span>56</span>
+            </div>
+            <div class="dato">
+                <p>Partidas Realizadas</p><span>1284</span>
+            </div>
+            <div class="dato">
+                <p>Horas</p><span>436h</span>
+            </div>
+            <div class="dato">
+                <p>Amigos</p><span>8</span>
+            </div>
+            <button onclick="cerrarSesion()" class="btn-logout">Cerrar sesión</button>
+        </div>
+
+        <div class="aside-slideshow">
+            <p class="aside-slideshow-titulo">🎮 Juego destacado</p>
+            <div id="aside-juego">
+                <img id="aside-img" src="../img/Icono_EldenRing_Redondo.png" alt="Juego destacado">
+                <p id="aside-nombre">Elden Ring</p>
+                <p id="aside-desc" class="aside-desc">RPG de mundo abierto y acción</p>
+            </div>
+        </div>
+    </aside>
+
+    <footer>
+        <p>© 2026 Portal de Noticias y Consejos - Ejercicio Página Web de Jonathan Afonso Darias -</p>
+    </footer>
+
+    <script src="../js/reloj.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/galeria.js"></script>
+    <script src="../js/comunidad.js"></script>
+    <script src="../js/extras.js"></script>
+
+    <button id="btn-top" onclick="volverArriba()" title="Volver arriba">↑</button>
+
+</body>
+
+</html>

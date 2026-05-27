@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Gamer - Rankings</title>
+    <link rel="stylesheet" href="../css/css_externo.css">
+    <link rel="stylesheet" href="../css/css_Rankings.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="../img/Logo.png" alt="Logo Portal Gamer">
+        <div id="reloj-contenedor">
+            <span id="reloj">00:00:00</span>
+        </div>
+        <div>
+            <h1>Portal Gamer</h1>
+            <p>Tu web de videojuegos</p>
+        </div>
+    </header>
+
+    <nav>
+        <h2>Menú</h2>
+        <ul>
+            <li><a href="../Index.html">Inicio</a></li>
+            <li><a href="./Juegos.html">Juegos</a></li>
+            <li><a href="./Rankings.html" class="activo">Rankings</a></li>
+            <li><a href="./Noticias.html">Noticias</a></li>
+            <li><a href="./Galeria.html">Galería</a></li>
+            <li><a href="./Ejercicios.html">Otras Cosas</a></li>
+        </ul>
+        <div class="nav-feed">
+            <p class="nav-feed-titulo">Comunidad</p>
+            <div id="feed-nav"></div>
+        </div>
+    </nav>
+
+    <main>
+        <h2>Rankings de los últimos videojuegos</h2>
+        <p class="subtitulo">Los juegos más jugados esta semana según la comunidad.</p>
+
+        <div class="grafico">
+            <h3>Juegos más jugados</h3>
+            <div class="barra-fila">
+                <span>Elden Ring</span>
+                <div class="barra-contenedor">
+                    <div class="barra" style="width: 90%;"></div>
+                </div>
+                <p>90%</p>
+            </div>
+            <div class="barra-fila">
+                <span>Baldur's Gate 3</span>
+                <div class="barra-contenedor">
+                    <div class="barra" style="width: 75%;"></div>
+                </div>
+                <p>75%</p>
+            </div>
+            <div class="barra-fila">
+                <span>Zelda: TotK</span>
+                <div class="barra-contenedor">
+                    <div class="barra" style="width: 60%;"></div>
+                </div>
+                <p>60%</p>
+            </div>
+            <div class="barra-fila">
+                <span>Cyberpunk 2077</span>
+                <div class="barra-contenedor">
+                    <div class="barra" style="width: 45%;"></div>
+                </div>
+                <p>45%</p>
+            </div>
+        </div>
+        <br>
+        <h3 class="podio-titulo">🏆 Top 3 — Juegos más valorados</h3>
+        <div class="podio-container">
+            <div class="podio-lugar plata">
+                <img id="podio-img-2" src="" alt="2º puesto">
+                <div class="podio-medalla">🥈</div>
+                <p id="podio-nombre-2" class="podio-nombre"></p>
+                <span id="podio-pct-2" class="podio-pct"></span>
+            </div>
+            <div class="podio-lugar oro">
+                <img id="podio-img-1" src="" alt="1º puesto">
+                <div class="podio-medalla">🥇</div>
+                <p id="podio-nombre-1" class="podio-nombre"></p>
+                <span id="podio-pct-1" class="podio-pct"></span>
+            </div>
+            <div class="podio-lugar bronce">
+                <img id="podio-img-3" src="" alt="3º puesto">
+                <div class="podio-medalla">🥉</div>
+                <p id="podio-nombre-3" class="podio-nombre"></p>
+                <span id="podio-pct-3" class="podio-pct"></span>
+            </div>
+        </div>
+
+        <div class="formularios">
+
+            <!-- TARJETA 1: VOTO + TRÁILER -->
+            <div class="tarjeta">
+                <div class="voto-layout">
+
+                    <div class="voto-form">
+                        <h4>Vota tu juego favorito</h4>
+                        <label for="juego">Selecciona un juego:</label>
+                        <select id="juego" name="juego" required onchange="mostrarTrailer()">
+                            <option value="">-- Selecciona --</option>
+                            <option value="elden">Elden Ring</option>
+                            <option value="bg3">Baldur's Gate 3</option>
+                            <option value="zelda">Zelda: TotK</option>
+                            <option value="cyber">Cyberpunk 2077</option>
+                            <option value="astrobot" disabled>Astro Bot (Próximamente)</option>
+                        </select>
+                        <button type="button" onclick="procesarVoto()">Votar</button>
+                        <div id="resultado-voto"></div>
+                    </div>
+
+                    <div class="voto-trailer" id="video-trailer" style="display:none;">
+                        <p id="video-titulo-trailer"></p>
+                        <iframe id="iframe-trailer" width="100%" height="180" src="" title="Tráiler oficial"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- TARJETA 2: COMENTARIOS -->
+            <div class="tarjeta">
+                <div class="info">
+                    <h4>Déjanos tu comentario</h4>
+                    <form action="#" method="post">
+                        <label for="comentario">Tu opinión:</label>
+                        <textarea id="comentario" name="comentario"
+                            placeholder="Escribe aquí tu comentario sobre el foro..." required></textarea>
+                        <button type="button" onclick="enviarComentario()">Enviar</button>
+                        <div id="resultado-comentario"></div>
+                        <div id="lista-comentarios"></div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <aside>
+        <h3>Mi perfil</h3>
+
+        <div id="formulario-login">
+            <div class="perfil">
+                <div class="avatar-icono">
+                    <img id="avatar-img" src="../img/Icono_Persona.png" alt="Avatar">
+                </div>
+            </div>
+            <div class="login-form">
+                <label for="input-usuario">Usuario:</label>
+                <input type="text" id="input-usuario" placeholder="Tu usuario">
+                <label for="input-password">Contraseña:</label>
+                <input type="password" id="input-password" placeholder="Tu contraseña">
+                <button onclick="iniciarSesion()">Entrar</button>
+            </div>
+        </div>
+
+        <div id="perfil-completo" style="display:none;">
+            <div class="perfil">
+                <p class="nombre" id="nombre-bienvenida">Bienvenido</p>
+                <div class="avatar-icono">
+                    <img id="avatar-img-logueado" src="../img/Icono_Persona.png" alt="Avatar">
+                </div>
+                <p class="nivel">Nivel 30</p>
+            </div>
+            <div class="dato">
+                <p>Logros</p><span>56</span>
+            </div>
+            <div class="dato">
+                <p>Partidas Realizadas</p><span>1284</span>
+            </div>
+            <div class="dato">
+                <p>Horas</p><span>436h</span>
+            </div>
+            <div class="dato">
+                <p>Amigos</p><span>8</span>
+            </div>
+            <button onclick="cerrarSesion()" class="btn-logout">Cerrar sesión</button>
+        </div>
+
+        <div class="aside-slideshow">
+            <p class="aside-slideshow-titulo">🎮 Juego destacado</p>
+            <div id="aside-juego">
+                <img id="aside-img" src="../img/Icono_EldenRing_Redondo.png" alt="Juego destacado">
+                <p id="aside-nombre">Elden Ring</p>
+                <p id="aside-desc" class="aside-desc">RPG de mundo abierto y acción</p>
+            </div>
+        </div>
+    </aside>
+
+    <footer>
+        <p>© 2026 Portal de Noticias y Consejos - Ejercicio Página Web de Jonathan Afonso Darias -</p>
+        <p class="visitas-footer">Visitas a la web: <span id="contador-visitas">0</span></p>
+    </footer>
+
+    <script src="../js/reloj.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/rankings.js"></script>
+    <script src="../js/comunidad.js"></script>
+    <script src="../js/extras.js"></script>
+    <button id="btn-top" onclick="volverArriba()" title="Volver arriba">↑</button>
+
+</body>
+
+</html>

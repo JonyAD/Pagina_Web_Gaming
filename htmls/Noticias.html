@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Gamer - Noticias</title>
+    <link rel="stylesheet" href="../css/css_externo.css">
+    <link rel="stylesheet" href="../css/css_Noticias.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="../img/Logo.png" alt="Logo Portal Gamer">
+        <div id="reloj-contenedor">
+            <span id="reloj">00:00:00</span>
+        </div>
+        <div>
+            <h1>Portal Gamer</h1>
+            <p>Tu web de videojuegos</p>
+        </div>
+    </header>
+
+    <nav>
+        <h2>Menú</h2>
+        <ul>
+            <li><a href="../Index.html">Inicio</a></li>
+            <li><a href="./Juegos.html">Juegos</a></li>
+            <li><a href="./Rankings.html">Rankings</a></li>
+            <li><a href="./Noticias.html" class="activo">Noticias</a></li>
+            <li><a href="./Galeria.html">Galería</a></li>
+            <li><a href="./Ejercicios.html">Otras Cosas</a></li>
+        </ul>
+        <div class="nav-feed">
+            <p class="nav-feed-titulo">Comunidad</p>
+            <div id="feed-nav"></div>
+        </div>
+    </nav>
+
+    <main>
+        <h2>Noticias</h2>
+        <p class="subtitulo">Últimas noticias procedentes del mundo gaming.</p>
+
+        <div class="grid-juegos">
+            <div class="tarjeta">
+                <img src="../img/Icono_EldenRing.png" alt="Elden Ring">
+                <div class="info">
+                    <p class="fecha">20 de marzo de 2026</p>
+                    <h4>Elden Ring anuncia su segundo DLC</h4>
+                    <p>FromSoftware ha confirmado un nuevo contenido descargable para Elden Ring proximamente. Se espera
+                        que llegue a finales de año con nuevas zonas y jefes, asi que estate atento.</p>
+                    <a class="links" href="https://www.ign.com" target="_blank">Leer más en IGN</a>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <img src="../img/Icono_BaldurGate.png" alt="Baldur's Gate 3">
+                <div class="info">
+                    <p class="fecha">18 de marzo de 2026</p>
+                    <h4>Baldur's Gate 3 recibe una gran actualización</h4>
+                    <p>Larian Studios ha lanzado un parche con mejoras de rendimiento, nuevos diálogos y corrección de
+                        errores reportados por la comunidad. Esto aumenta el nivel de calidad del juego.</p>
+                    <a class="links" href="https://www.3djuegos.com" target="_blank">Leer más en 3DJuegos</a>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <img src="../img/Icono_Zelda.png" alt="Zelda">
+                <div class="info">
+                    <p class="fecha">15 de marzo de 2026</p>
+                    <h4>Nintendo Direct: nuevos juegos para Switch 2</h4>
+                    <p>Nintendo presentó varios títulos nuevos en su último Direct, entre ellos una nueva entrega de la
+                        saga Zelda y un remake sorpresa.</p>
+                    <a class="links" href="https://www.vandal.net" target="_blank">Leer más en Vandal</a>
+                </div>
+            </div>
+
+            <div class="tarjeta">
+                <img src="../img/Icono_CyberPunk.png" alt="Cyberpunk 2077">
+                <div class="info">
+                    <p class="fecha">10 de marzo de 2026</p>
+                    <h4>Cyberpunk 2077 supera los 30 millones de copias vendidas</h4>
+                    <p>CD Projekt Red ha anunciado que su juego insignia ha alcanzado un nuevo hito de ventas gracias a
+                        su expansión Phantom Liberty.</p>
+                    <a class="links" href="https://www.eurogamer.es" target="_blank">Leer más en Eurogamer</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <aside>
+        <h3>Mi perfil</h3>
+
+        <!-- Formulario de login -->
+        <div id="formulario-login">
+            <div class="perfil">
+                <div class="avatar-icono">
+                    <img id="avatar-img" src="../img/Icono_Persona.png" alt="Avatar">
+                </div>
+            </div>
+            <div class="login-form">
+                <label for="input-usuario">Usuario:</label>
+                <input type="text" id="input-usuario" placeholder="Tu usuario">
+                <label for="input-password">Contraseña:</label>
+                <input type="password" id="input-password" placeholder="Tu contraseña">
+                <button onclick="iniciarSesion()">Entrar</button>
+            </div>
+        </div>
+
+        <!-- Perfil completo, se muestra al hacer login -->
+        <div id="perfil-completo" style="display:none;">
+            <div class="perfil">
+                <p class="nombre" id="nombre-bienvenida">Bienvenido</p>
+                <div class="avatar-icono">
+                    <img id="avatar-img-logueado" src="../img/Icono_Persona.png" alt="Avatar">
+                </div>
+                <p class="nivel">Nivel 30</p>
+            </div>
+            <div class="dato">
+                <p>Logros</p><span>56</span>
+            </div>
+            <div class="dato">
+                <p>Partidas Realizadas</p><span>1284</span>
+            </div>
+            <div class="dato">
+                <p>Horas</p><span>436h</span>
+            </div>
+            <div class="dato">
+                <p>Amigos</p><span>8</span>
+            </div>
+            <button onclick="cerrarSesion()" class="btn-logout">Cerrar sesión</button>
+        </div>
+
+        <div class="aside-slideshow">
+            <p class="aside-slideshow-titulo">🎮 Juego destacado</p>
+            <div id="aside-juego">
+                <img id="aside-img" src="../img/Icono_EldenRing_Redondo.png" alt="Juego destacado">
+                <p id="aside-nombre">Elden Ring</p>
+                <p id="aside-desc" class="aside-desc">RPG de mundo abierto y acción</p>
+            </div>
+        </div>
+    </aside>
+
+    <footer>
+        <p>© 2026 Portal de Noticias y Consejos - Ejercicio Página Web de Jonathan Afonso Darias -</p>
+        <p class="visitas-footer">Visitas a la web: <span id="contador-visitas">0</span></p>
+    </footer>
+
+    <script src="../js/reloj.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/comunidad.js"></script>
+    <script src="../js/extras.js"></script>
+
+    <button id="btn-top" onclick="volverArriba()" title="Volver arriba">↑</button>
+
+</body>
+
+</html>

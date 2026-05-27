@@ -1,0 +1,25 @@
+<!-- Jonathan Afonso Darias, 1DAM -->
+
+<!-- Crea un párrafo con un texto inicial y un botón que al pulsarlo
+  cambie el contenido de dicho párrafo.--->
+ 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2 - Cambiar texto</title>
+</head>
+<body>
+    <h2>Ejercicio 2 - Cambiar texto de un párrafo</h2>
+    <p id="parrafo">Este es el texto original del párrafo.</p>
+    <button id="botonCambiar">Cambiar texto</button>
+
+    <script>
+        let botonCambiar = document.getElementById("botonCambiar");
+
+        botonCambiar.addEventListener("click", function () {
+            document.getElementById("parrafo").textContent = "¡El texto ha sido cambiado al pulsar el botón!";
+        });
+    </script>
+</body>
+</html>
