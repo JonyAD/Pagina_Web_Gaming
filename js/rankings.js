@@ -46,10 +46,10 @@ function mostrarPodio() {
 }
 
 let trailers = {
-    elden: 'https://www.youtube.com/embed/sC9abcLLQpI',
-    bg3: 'https://www.youtube.com/embed/imS3PeHRBXE',
+    elden: 'https://www.youtube.com/embed/CptaXqVY6-E',
+    bg3: 'https://www.youtube.com/embed/1T22wNvoNiU',
     zelda: 'https://www.youtube.com/embed/gp9aY09li1s',
-    cyber: 'https://www.youtube.com/embed/D4aUFSYs8GA'
+    cyber: 'https://www.youtube.com/embed/8X2kIfS6fb8'
 };
 
 let nombresJuego = {
